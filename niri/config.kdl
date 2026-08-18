@@ -81,10 +81,10 @@ layout {
 
     // Struts 会缩小窗口占用的区域，类似于 layer-shell 面板。
     struts {
-         //left 5
-         //right 5
-        // top 64
-        // bottom 64
+        // left 5
+        // right 5
+        // top 10
+        // bottom 10
     }
 }
 // 快捷键
@@ -367,7 +367,7 @@ window-rule {
 }
 
 window-rule {
-    match app-id=r#"thunar$"# title="^重命名"
+    match app-id=r#"Thunar$"# title="^重命名"
     open-floating true
 }
 
