@@ -366,6 +366,16 @@ window-rule {
     open-focused false
 }
 
+window-rule {
+    match app-id=r#"thunar$"# title="^重命名"
+    open-floating true
+}
+
+window-rule {
+    match app-id=r#"Pinentry-gtk$"#
+    open-floating true
+}
+
 layer-rule {
     match namespace=r#"^dms:.*"#
     opacity 0.99
@@ -376,5 +386,14 @@ layer-rule {
     }
 }
 
+layer-rule {
+    match namespace="^dms:blurwallpaper$"
+    place-within-backdrop true
+}
+
+cursor {
+    xcursor-theme "Breeze_Light"
+    xcursor-size 24
+}
+
 include "dms/binds.kdl"
-include "dms/cursor.kdl"
