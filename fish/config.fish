@@ -9,7 +9,7 @@ function y
 	command rm -f -- "$tmp"
 end
 
-oh-my-posh init fish | source
+oh-my-posh init fish --strict --config ~/dotfiles/Oh-my-posh/config.json | source
 
 alias claudey='claude --dangerously-skip-permissions'
 alias claudea='claude --permission-mode acceptEdits'
