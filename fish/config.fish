@@ -15,3 +15,6 @@ alias claudey='claude --dangerously-skip-permissions'
 alias claudea='claude --permission-mode acceptEdits'
 alias codexy='codex --dangerously-bypass-approvals-and-sandbox'
 alias codexa='codex --full-auto'
+
+# mimocode
+fish_add_path /home/nero/.mimocode/bin
