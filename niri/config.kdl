@@ -376,6 +376,31 @@ window-rule {
     open-floating true
 }
 
+window-rule {
+    match app-id=r#"kitty$"#
+    background-effect {
+        blur false
+        xray false
+    }
+}
+
+window-rule {
+    match app-id="^folia$"
+    // open-maximized-to-edges true
+     default-column-width { }
+    draw-border-with-background false
+    opacity 1.0
+    geometry-corner-radius 12
+    clip-to-geometry false
+    focus-ring {
+        off
+    }
+    background-effect {
+        blur false
+        xray false
+    }
+}
+
 layer-rule {
     match namespace=r#"^dms:.*"#
     opacity 0.99
@@ -397,3 +422,4 @@ cursor {
 }
 
 include "dms/binds.kdl"
+include "dms/outputs.kdl"
