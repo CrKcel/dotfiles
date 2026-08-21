@@ -11,9 +11,7 @@ input {
     }
     mouse {
     }
-
     // warp-mouse-to-focus
-
     focus-follows-mouse max-scroll-amount="0%"
 }
 // 输出
@@ -124,170 +122,170 @@ binds {
     // 将屏幕上完全可见的列居中。
     //Mod+Ctrl+C { center-visible-columns; }
 
-    // 浮动布局
+   // 浮动布局
     Mod+Y      { toggle-window-floating; }
     Mod+Shift+Y { switch-focus-between-floating-and-tiling; }
 
-    //列标签显示模式
-   // Mod+O { toggle-column-tabbed-display; }
+   //列标签显示模式
+    // Mod+O { toggle-column-tabbed-display; }
 
     Print { screenshot; }
     Ctrl+Print { screenshot-screen; }
     Alt+Print { screenshot-window; }
 
-    // quit
+   // quit
     Mod+Shift+O { quit; }
     Ctrl+Alt+Delete { quit; }
 
-    // 关闭显示器电源
-    Mod+Shift+P { power-off-monitors; }
+   // 关闭显示器电源
+    Mod+Shift+P                                       { power-off-monitors; }
 
-    Mod+Tab { focus-workspace-previous; }
-    Mod+Space  { focus-window-previous;  }
+    Mod+Tab                                           { focus-workspace-previous; }
+    Mod+Space                                         { focus-window-previous;  }
 
-    // 窗口最大化
-    Mod+F { maximize-column; }
-    Mod+M { fullscreen-window;  }
-    Mod+Ctrl+F { expand-column-to-available-width; }
-    Mod+Shift+F { maximize-window-to-edges; }
+   // 窗口最大化
+    Mod+F                                             { maximize-column; }
+    Mod+M                                             { fullscreen-window;  }
+    Mod+Ctrl+F                                        { expand-column-to-available-width; }
+    Mod+Shift+F                                       { maximize-window-to-edges; }
 
-    // 宽度调整
-    Mod+Minus { set-column-width "-10%"; }
-    Mod+Equal { set-column-width "+10%"; }
+   // 宽度调整
+    Mod+Minus                                         { set-column-width "-10%"; }
+    Mod+Equal                                         { set-column-width "+10%"; }
 
-    // 高度调整
-    Mod+Shift+Minus { set-window-height "-10%"; }
-    Mod+Shift+Equal { set-window-height "+10%"; }
+   // 高度调整
+    Mod+Shift+Minus                                   { set-window-height "-10%"; }
+    Mod+Shift+Equal                                   { set-window-height "+10%"; }
 
-    // 切换预设的宽度
+   // 切换预设的宽度
     Mod+E                                             { switch-preset-column-width; }
-    Mod+Ctrl+E                                   { switch-preset-column-width-back; }
+    Mod+Ctrl+E                                        { switch-preset-column-width-back; }
 
-    // 切换预设的高度
-    Mod+Shift+E                                  { switch-preset-window-height; }
-    Mod+Shift+Ctrl+E                         { reset-window-height; }
+   // 切换预设的高度
+    Mod+Shift+E                                       { switch-preset-window-height; }
+    Mod+Shift+Ctrl+E                                  { reset-window-height; }
 
-    Mod+1 { focus-workspace 1; }
-    Mod+2 { focus-workspace 2; }
-    Mod+3 { focus-workspace 3; }
-    Mod+4 { focus-workspace 4; }
-    Mod+5 { focus-workspace 5; }
-    Mod+6 { focus-workspace 6; }
-    Mod+7 { focus-workspace 7; }
-    Mod+8 { focus-workspace 8; }
-    Mod+9 { focus-workspace 9; }
-    Mod+Ctrl+1 { move-column-to-workspace 1; }
-    Mod+Ctrl+2 { move-column-to-workspace 2; }
-    Mod+Ctrl+3 { move-column-to-workspace 3; }
-    Mod+Ctrl+4 { move-column-to-workspace 4; }
-    Mod+Ctrl+5 { move-column-to-workspace 5; }
-    Mod+Ctrl+6 { move-column-to-workspace 6; }
-    Mod+Ctrl+7 { move-column-to-workspace 7; }
-    Mod+Ctrl+8 { move-column-to-workspace 8; }
-    Mod+Ctrl+9 { move-column-to-workspace 9; }
+    Mod+1                                             { focus-workspace 1; }
+    Mod+2                                             { focus-workspace 2; }
+    Mod+3                                             { focus-workspace 3; }
+    Mod+4                                             { focus-workspace 4; }
+    Mod+5                                             { focus-workspace 5; }
+    Mod+6                                             { focus-workspace 6; }
+    Mod+7                                             { focus-workspace 7; }
+    Mod+8                                             { focus-workspace 8; }
+    Mod+9                                             { focus-workspace 9; }
+    Mod+Ctrl+1                                        { move-column-to-workspace 1; }
+    Mod+Ctrl+2                                        { move-column-to-workspace 2; }
+    Mod+Ctrl+3                                        { move-column-to-workspace 3; }
+    Mod+Ctrl+4                                        { move-column-to-workspace 4; }
+    Mod+Ctrl+5                                        { move-column-to-workspace 5; }
+    Mod+Ctrl+6                                        { move-column-to-workspace 6; }
+    Mod+Ctrl+7                                        { move-column-to-workspace 7; }
+    Mod+Ctrl+8                                        { move-column-to-workspace 8; }
+    Mod+Ctrl+9                                        { move-column-to-workspace 9; }
 
-    // 聚焦
-    Mod+Right                                                                      { focus-column-right; }
-    Mod+Left                                                                         { focus-column-left; }
-    Mod+Down                                                                     { focus-workspace-down; }
-    Mod+Up                                                                           { focus-workspace-up; }
+   // 聚焦
+    Mod+Right                                         { focus-column-right; }
+    Mod+Left                                          { focus-column-left; }
+    Mod+Down                                          { focus-workspace-down; }
+    Mod+Up                                            { focus-workspace-up; }
 
-    Mod+J                                                                                { focus-column-right; }
-    Mod+K                                                                               { focus-column-left; }
-    Mod+L                                                                                { focus-workspace-down; }
-    Mod+H                                                                               { focus-workspace-up; }
+    Mod+J                                             { focus-column-right; } 
+    Mod+K                                             { focus-column-left; }
+    Mod+L                                             { focus-workspace-down; }
+    Mod+H                                             { focus-workspace-up; }
 
-    Mod+D                                                                              { focus-column-right; }
-    Mod+A                                                                              { focus-column-left; }
-    Mod+S                                                                              { focus-workspace-down;  }
-    Mod+W                                                                             { focus-workspace-up; }
+    Mod+D                                             { focus-column-right; }
+    Mod+A                                             { focus-column-left; }
+    Mod+S                                             { focus-workspace-down; }
+    Mod+W                                             { focus-workspace-up; }
 
-    Mod+WheelScrollDown                                             { focus-column-right; }
-    Mod+WheelScrollUp                                                   { focus-column-left; }
-    Mod+MouseForward                                                   { focus-workspace-up;  }
-    Mod+MouseBack                                                          { focus-workspace-down;  }
+    Mod+WheelScrollDown                               { focus-column-right; }
+    Mod+WheelScrollUp                                 { focus-column-left; }
+    Mod+MouseForward                                  { focus-workspace-up; }
+    Mod+MouseBack                                     { focus-workspace-down; }
 
-    // 移动
-    Mod+Ctrl+Right                                                            { move-column-right; }
-    Mod+Ctrl+Left                                                               { move-column-left; }
-    Mod+Ctrl+Down                                                           { move-column-to-workspace-down;  }
-    Mod+Ctrl+Up                                                                 {  move-column-to-workspace-up; }
+   // 移动
+    Mod+Ctrl+Right                                    { move-column-right; }
+    Mod+Ctrl+Left                                     { move-column-left; }
+    Mod+Ctrl+Down                                     { move-column-to-workspace-down; }
+    Mod+Ctrl+Up                                       { move-column-to-workspace-up; }
 
-    Mod+Ctrl+J                                                                    { move-column-right; }
-    Mod+Ctrl+K                                                                    { move-column-left; }
-    Mod+Ctrl+L                                                                    { move-column-to-workspace-down; }
-    Mod+Ctrl+H                                                                   { move-column-to-workspace-up;  }
+    Mod+Ctrl+J                                        { move-column-right; }
+    Mod+Ctrl+K                                        { move-column-left; }
+    Mod+Ctrl+L                                        { move-column-to-workspace-down; }
+    Mod+Ctrl+H                                        { move-column-to-workspace-up; }
 
-    Mod+Ctrl+D                                                                   { move-column-right; }
-    Mod+Ctrl+A                                                                   { move-column-left; }
-    Mod+Ctrl+S                                                                   { move-column-to-workspace-down; }
-    Mod+Ctrl+W                                                                  { move-column-to-workspace-up;  }
+    Mod+Ctrl+D                                        { move-column-right; }
+    Mod+Ctrl+A                                        { move-column-left; }
+    Mod+Ctrl+S                                        { move-column-to-workspace-down; }
+    Mod+Ctrl+W                                        { move-column-to-workspace-up;  }
 
-    Mod+Ctrl+WheelScrollDown                                 { move-column-right; }
-    Mod+Ctrl+WheelScrollUp                                       { move-column-left; }
-    Mod+Ctrl+MouseBack                                              { move-column-to-workspace-down; }
-    Mod+Ctrl+MouseForward                                       { move-column-to-workspace-up; }
+    Mod+Ctrl+WheelScrollDown                          { move-column-right; }
+    Mod+Ctrl+WheelScrollUp                            { move-column-left; }
+    Mod+Ctrl+MouseBack                                { move-column-to-workspace-down; }
+    Mod+Ctrl+MouseForward                             { move-column-to-workspace-up; }
 
-    // 多显示器聚焦
-    Mod+Shift+Right                                                        { focus-monitor-right; }
-    Mod+Shift+Left                                                           { focus-monitor-left; }
-    Mod+Shift+Down                                                       { focus-monitor-down; }
-    Mod+Shift+Up                                                             { focus-monitor-up; }
+   // 多显示器聚焦
+    Mod+Shift+Right                                   { focus-monitor-right; }
+    Mod+Shift+Left                                    { focus-monitor-left; }
+    Mod+Shift+Down                                    { focus-monitor-down; }
+    Mod+Shift+Up                                      { focus-monitor-up; }
 
-    Mod+Shift+L                                                                 { focus-monitor-right; }
-    Mod+Shift+H                                                                { focus-monitor-left; }
-    Mod+Shift+J                                                                 { focus-monitor-down; }
-    Mod+Shift+K                                                                 { focus-monitor-up; }
+    Mod+Shift+L                                       { focus-monitor-right; }
+    Mod+Shift+H                                       { focus-monitor-left; }
+    Mod+Shift+J                                       { focus-monitor-down; }
+    Mod+Shift+K                                       { focus-monitor-up; }
 
-    Mod+Shift+D                                                                 { focus-monitor-right; }
-    Mod+Shift+A                                                                 { focus-monitor-left; }
-    Mod+Shift+S                                                                 { focus-monitor-down;  }
-    Mod+Shift+W                                                                { focus-monitor-up; }
+    Mod+Shift+D                                       { focus-monitor-right; }
+    Mod+Shift+A                                       { focus-monitor-left; }
+    Mod+Shift+S                                       { focus-monitor-down; }
+    Mod+Shift+W                                       { focus-monitor-up; }
 
-    Mod+Shift+WheelScrollDown                              { focus-monitor-right; }
-    Mod+Shift+WheelScrollUp                                    { focus-monitor-left; }
-    Mod+Shift+MouseForward                                    { focus-monitor-down;  }
-    Mod+Shift+MouseBack                                           { focus-monitor-up; }
+    Mod+Shift+WheelScrollDown                         { focus-monitor-right; }
+    Mod+Shift+WheelScrollUp                           { focus-monitor-left; }
+    Mod+Shift+MouseForward                            { focus-monitor-down; }
+    Mod+Shift+MouseBack                               { focus-monitor-up; }
 
-    // 多显示器移动
-    Mod+Shift+Ctrl+Left                                                 { move-column-to-monitor-left; }
-    Mod+Shift+Ctrl+Down                                             { move-column-to-monitor-down; }
-    Mod+Shift+Ctrl+Up                                                   { move-column-to-monitor-up; }
-    Mod+Shift+Ctrl+Right                                              { move-column-to-monitor-right; }
+   // 多显示器移动
+    Mod+Shift+Ctrl+Left                               { move-column-to-monitor-left; }
+    Mod+Shift+Ctrl+Down                               { move-column-to-monitor-down; }
+    Mod+Shift+Ctrl+Up                                 { move-column-to-monitor-up; }
+    Mod+Shift+Ctrl+Right                              { move-column-to-monitor-right; }
 
-    Mod+Shift+Ctrl+L                                                       { move-column-to-monitor-right; }
-    Mod+Shift+Ctrl+H                                                      { move-column-to-monitor-left; }
-    Mod+Shift+Ctrl+J                                                       { move-column-to-monitor-down; }
-    Mod+Shift+Ctrl+K                                                       { move-column-to-monitor-up; }
+    Mod+Shift+Ctrl+L                                  { move-column-to-monitor-right; }
+    Mod+Shift+Ctrl+H                                  { move-column-to-monitor-left; }
+    Mod+Shift+Ctrl+J                                  { move-column-to-monitor-down; }
+    Mod+Shift+Ctrl+K                                  { move-column-to-monitor-up; }
 
-    Mod+Shift+Ctrl+D                                                       { move-column-to-monitor-right; }
-    Mod+Shift+Ctrl+A                                                       { move-column-to-monitor-left; }
-    Mod+Shift+Ctrl+S                                                       { move-column-to-monitor-down; }
-    Mod+Shift+Ctrl+W                                                      { move-column-to-monitor-up;  }
+    Mod+Shift+Ctrl+D                                  { move-column-to-monitor-right; }
+    Mod+Shift+Ctrl+A                                  { move-column-to-monitor-left; }
+    Mod+Shift+Ctrl+S                                  { move-column-to-monitor-down; }
+    Mod+Shift+Ctrl+W                                  { move-column-to-monitor-up;  }
 
-    Mod+Shift+Ctrl+WheelScrollDown                     { move-column-right; }
-    Mod+Shift+Ctrl+WheelScrollUp                           { move-column-left; }
-    Mod+Shift+Ctrl+MouseBack                                  { move-column-to-monitor-down; }
-    Mod+Shift+Ctrl+MouseForward                           { move-column-to-monitor-up; }
+    Mod+Shift+Ctrl+WheelScrollDown                    { move-column-right; }
+    Mod+Shift+Ctrl+WheelScrollUp                      { move-column-left; }
+    Mod+Shift+Ctrl+MouseBack                          { move-column-to-monitor-down; }
+    Mod+Shift+Ctrl+MouseForward                       { move-column-to-monitor-up; }
 
-    // 其它
-    Mod+I         { focus-workspace-down; }
-    Mod+U         { focus-workspace-up; }
+   // 将焦点窗口移入和移出列
+    Mod+BracketLeft                                   { consume-or-expel-window-left; }
+    Mod+BracketRight                                  { consume-or-expel-window-right; }
 
-    Mod+Ctrl+I         { move-workspace-down; }
-    Mod+Ctrl+U         { move-workspace-up; }
+   // Consume one window from the right to the bottom of the focused column.
+    Mod+Comma                                         { consume-window-into-column; }
+   // Expel the bottom window from the focused column to the right.
+    Mod+Period                                        { expel-window-from-column; }
 
-     Mod+Shift+Ctrl+I    { move-workspace-to-monitor-down; }
-     Mod+Shift+Ctrl+U  { move-workspace-to-monitor-up; }
+   // 其它
+    Mod+I                                             { focus-workspace-down; }
+    Mod+U                                             { focus-workspace-up; }
 
-     // 将焦点窗口移入和移出列
-     Mod+BracketLeft  { consume-or-expel-window-left; }
-     Mod+BracketRight { consume-or-expel-window-right; }
+    Mod+Ctrl+I                                        { move-workspace-down; }
+    Mod+Ctrl+U                                        { move-workspace-up; }
 
-     // Consume one window from the right to the bottom of the focused column.
-     Mod+Comma  { consume-window-into-column; }
-     // Expel the bottom window from the focused column to the right.
-     Mod+Period { expel-window-from-column; }
+    Mod+Shift+Ctrl+I                                  { move-workspace-to-monitor-down; }
+    Mod+Shift+Ctrl+U                                  { move-workspace-to-monitor-up; }
 
 }
 
@@ -295,6 +293,7 @@ binds {
 animations {
     // slowdown 3.0
 }
+
 hotkey-overlay {
     skip-at-startup
 }
@@ -313,7 +312,7 @@ blur {
 }
 
 prefer-no-csd
-screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
+screenshot-path "~/图片/屏幕截图/%Y-%m-%d %H-%M-%S.png"
 
 // 窗口规则
 window-rule {
@@ -372,6 +371,11 @@ window-rule {
 }
 
 window-rule {
+    match app-id=r#"thunar$"# title="^重命名"
+    open-floating true
+}
+
+window-rule {
     match app-id=r#"Pinentry-gtk$"#
     open-floating true
 }
@@ -379,18 +383,15 @@ window-rule {
 window-rule {
     match app-id=r#"kitty$"#
     background-effect {
-        blur false
+//        blur false
         xray false
     }
 }
 
 window-rule {
     match app-id="^folia$"
-    // open-maximized-to-edges true
-     default-column-width { }
+    open-maximized-to-edges true
     draw-border-with-background false
-    opacity 1.0
-    geometry-corner-radius 12
     clip-to-geometry false
     focus-ring {
         off
@@ -405,7 +406,6 @@ layer-rule {
     match namespace=r#"^dms:.*"#
     opacity 0.99
     background-effect {
-        //blur true
         xray false
         noise 0.02
     }
