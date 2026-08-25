@@ -11,6 +11,12 @@ hl.on("hyprland.start", function()
   hl.exec_cmd("noctalia")
 end)
 
+hl.config({
+   cursor = {
+       no_warps = true
+   }
+})
+
 hl.monitor({
     output   = "DP-1",
     mode     = "2560x1600@165.002",
@@ -22,7 +28,7 @@ hl.monitor({
 hl.config({
     input = {
         kb_layout  = "us",
-        follow_mouse = 0,
+        follow_mouse = 2,
         sensitivity = 0,
         touchpad = {
             natural_scroll = true,
@@ -48,7 +54,7 @@ hl.config({
 
         resize_on_border = false,
         allow_tearing = false,
-        layout = "scrolling",
+        layout = "master",
     },
 
     decoration = {
@@ -93,6 +99,26 @@ hl.config({
 
     },
 })
+
+local AutoFocusRule = {
+    enabled = false,
+}
+
+function AutoFocusRule:set_enabled(v)
+    self.enabled = v
+end
+
+hl.on("window.active", function(w, reason)
+    if not AutoFocusRule.enabled then return end
+    if not w.address then return end 
+    if reason ~= 5 then return end
+    if w.floating or w.fullscreen ~= 0 then return end
+    local ws = w.workspace
+    if not ws or ws.tiled_layout ~= "master" then return end
+    hl.dispatch(hl.dsp.layout("swapwithmaster master ignoremaster"))
+end)
+
+AutoFocusRule:set_enabled(true)
 
 hl.config({
     scrolling = {
