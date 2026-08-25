@@ -16,9 +16,11 @@ alias claudea='claude --permission-mode acceptEdits'
 alias codexy='codex --dangerously-bypass-approvals-and-sandbox'
 alias codexa='codex --full-auto'
 
+alias yay='paru'
+
 # mimocode
 fish_add_path /home/nero/.mimocode/bin
 set -Ux MIMOCODE_DISABLE_CODEX_SKILLS 1
 set -Ux MIMOCODE_DISABLE_CLAUDE_CODE_SKILLS 1
 set -Ux MIMOCODE_DISABLE_BUILTIN_SKILLS 1
-set -Ux MIMOCODE_DISABLE_EXTERNAL_SKILLS 0
+set -Ux MIMOCODE_DISABLE_EXTERNAL_SKILLS 1
