@@ -1,3 +1,15 @@
+hl.env("XCURSOR_SIZE", "24")
+hl.env("HYPRCURSOR_SIZE", "24")
+
+local terminal    = "kitty"
+local fileManager = "dolphin"
+local menu = "hyprlauncher"
+
+hl.exec_cmd("fcitx5")
+
+hl.on("hyprland.start", function()
+  hl.exec_cmd("noctalia")
+end)
 
 hl.monitor({
     output   = "DP-1",
@@ -7,48 +19,45 @@ hl.monitor({
     vrr      = 1,
 })
 
-local terminal    = "kitty"
-local fileManager = "dolphin"
-local menu = "hyprlauncher"
+hl.config({
+    input = {
+        kb_layout  = "us",
+        follow_mouse = 0,
+        sensitivity = 0,
+        touchpad = {
+            natural_scroll = true,
+        },
+    },
+})
 
-hl.env("XCURSOR_SIZE", "24")
-hl.env("HYPRCURSOR_SIZE", "24")
-
-hl.exec_cmd("fcitx5")
-
-hl.on("hyprland.start", function()
-  hl.exec_cmd("noctalia")
-end)
-
+hl.gesture({
+    fingers = 3,
+    direction = "horizontal",
+    action = "workspace"
+})
 
 hl.config({
     general = {
         gaps_in  = 4,
         gaps_out = 4,
-
         border_size = 2,
-
         col = {
             active_border   = { colors = {"rgba(33ccffee)", "rgba(00ff99ee)"}, angle = 45 },
             inactive_border = "rgba(595959aa)",
         },
 
-        -- Set to true to enable resizing windows by clicking and dragging on borders and gaps
         resize_on_border = false,
-
-        -- Please see https://wiki.hypr.land/Configuring/Advanced-and-Cool/Tearing/ before you turn this on
         allow_tearing = false,
-
         layout = "scrolling",
     },
 
     decoration = {
-        rounding       = 20,
+        rounding       = 12,
         rounding_power = 2,
 
         -- Change transparency of focused and unfocused windows
         active_opacity   = 1.0,
-        inactive_opacity = 1.0,
+        inactive_opacity = 0.85,
 
         shadow = {
             enabled      = true,
@@ -67,6 +76,36 @@ hl.config({
 
     animations = {
         enabled = true,
+    },
+})
+
+hl.config({
+    dwindle = {
+        preserve_split = true,
+    },
+})
+
+hl.config({
+    master = {
+        mfact      = 0.75,
+        new_status = "slave",
+        orientation = "right",
+
+    },
+})
+
+hl.config({
+    scrolling = {
+        fullscreen_on_one_column = true,
+        wrap_focus = false,
+        column_width = 0.7,
+    },
+})
+
+hl.config({
+    misc = {
+        force_default_wallpaper = 1,
+        disable_hyprland_logo   = true,
     },
 })
 
@@ -98,60 +137,6 @@ hl.animation({ leaf = "workspacesIn",  enabled = true,  speed = 1.21, bezier = "
 hl.animation({ leaf = "workspacesOut", enabled = true,  speed = 1.94, bezier = "almostLinear", style = "fade" })
 hl.animation({ leaf = "zoomFactor",    enabled = true,  speed = 7,    bezier = "quick" })
 
-hl.config({
-    dwindle = {
-        preserve_split = true, -- You probably want this
-    },
-})
-
-hl.config({
-    master = {
-        mfact      = 0.75,
-        new_status = "slave",
-        orientation = "right",
-
-    },
-})
-
-hl.config({
-    scrolling = {
-        fullscreen_on_one_column = true,
-        wrap_focus = false,
-        column_width = 0.8,
-    },
-})
-
-hl.config({
-    misc = {
-        force_default_wallpaper = 0,    -- Set to 0 or 1 to disable the anime mascot wallpapers
-        disable_hyprland_logo   = true, -- If true disables the random hyprland logo / anime girl background. :(
-    },
-})
-
-hl.config({
-    input = {
-        kb_layout  = "us",
-        kb_variant = "",
-        kb_model   = "",
-        kb_options = "",
-        kb_rules   = "",
-
-        follow_mouse = 1,
-
-        sensitivity = 0, -- -1.0 - 1.0, 0 means no modification.
-
-        touchpad = {
-            natural_scroll = false,
-        },
-    },
-})
-
-hl.gesture({
-    fingers = 3,
-    direction = "horizontal",
-    action = "workspace"
-})
-
 -----------------------------------------------------------------------------------
 
 local ipc = "noctalia msg "
@@ -177,8 +162,13 @@ hl.bind(mainMod .. " + right", hl.dsp.focus({ direction = "right" }))
 hl.bind(mainMod .. " + mouse_up",    hl.dsp.focus({ direction = "left" }))
 hl.bind(mainMod .. " + mouse_down",  hl.dsp.focus({ direction = "right" }))
 
-hl.bind(mainMod .. " + down", hl.dsp.focus({ workspace = "e+1" }))
-hl.bind(mainMod .. " + up",   hl.dsp.focus({ workspace = "e-1" }))
+hl.bind(mainMod .. " + down", hl.dsp.focus({ workspace = "+1" }))
+hl.bind(mainMod .. " + up",   hl.dsp.focus({ workspace = "-1" }))
+hl.bind(mainMod .. " + mouse:275",   hl.dsp.focus({ workspace = "+1" }))
+hl.bind(mainMod .. " + mouse:276",   hl.dsp.focus({ workspace = "-1" }))
+
+hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(),   { mouse = true })
+hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
 
 for i = 1, 10 do
     local key = i % 10 -- 10 maps to key 0
@@ -186,35 +176,30 @@ for i = 1, 10 do
     hl.bind(mainMod .. " + SHIFT + " .. key,     hl.dsp.window.move({ workspace = i }))
 end
 
+hl.bind(mainMod .. "+Space", hl.dsp.exec_cmd(ipc .. "panel-toggle launcher"))
+hl.bind(mainMod .. "+comma", hl.dsp.exec_cmd(ipc .. "settings-toggle"))
+hl.bind("ALT + Tab", hl.dsp.exec_cmd(ipc .. "window-switcher"))
+
 -- hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
 -- hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 -- hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(menu))
 -- hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 -- hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))    -- dwindle only
+-- hl.bind(mainMod .. "+S", hl.dsp.exec_cmd(ipc .. "panel-toggle control-center"))
 
 -- Example special workspace
 -- hl.bind(mainMod .. " + S",         hl.dsp.workspace.toggle_special("magic"))
 -- hl.bind(mainMod .. " + SHIFT + S", hl.dsp.window.move({ workspace = "special:magic" }))
 
--- Move/resize windows with mainMod + LMB/RMB and dragging
-hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(),   { mouse = true })
-hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
-
-hl.bind(mainMod .. "+Space", hl.dsp.exec_cmd(ipc .. "panel-toggle launcher"))
-hl.bind(mainMod .. "+comma", hl.dsp.exec_cmd(ipc .. "settings-toggle"))
-hl.bind("ALT + Tab", hl.dsp.exec_cmd(ipc .. "window-switcher"))
--- hl.bind(mainMod .. "+S", hl.dsp.exec_cmd(ipc .. "panel-toggle control-center"))
-
 -----------------------------------------------------------------------------------------------------------
 
-local suppressMaximizeRule = hl.window_rule({
+hl.window_rule({
     -- Ignore maximize requests from all apps.
     name  = "suppress-maximize-events",
     match = { class = ".*" },
 
     suppress_event = "maximize",
 })
--- suppressMaximizeRule:set_enabled(false)
 
 hl.window_rule({
     -- Fix some dragging issues with XWayland
