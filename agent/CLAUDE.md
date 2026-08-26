@@ -1,5 +1,3 @@
-# CLAUDE.md
-
 # Engineering Constraints
 
 ## Adding Features
