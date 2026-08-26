@@ -2,7 +2,7 @@ hl.env("XCURSOR_SIZE", "24")
 hl.env("HYPRCURSOR_SIZE", "24")
 
 local terminal    = "kitty"
-local fileManager = "dolphin"
+local fileManager = "thunar"
 local menu = "hyprlauncher"
 
 hl.exec_cmd("fcitx5")
@@ -48,8 +48,8 @@ hl.config({
         gaps_out = 4,
         border_size = 2,
         col = {
-            active_border   = { colors = {"rgba(33ccffee)", "rgba(00ff99ee)"}, angle = 45 },
-            inactive_border = "rgba(595959aa)",
+            active_border   = "rgba(ffffff4c)",
+            inactive_border = "rgba(ffffff00)",
         },
 
         resize_on_border = false,
@@ -185,11 +185,6 @@ for i = 1, 10 do
     hl.bind(mainMod .. " + SHIFT + " .. key,     hl.dsp.window.move({ workspace = i }))
 end
 
-hl.bind(mainMod .. " + Q", hl.dsp.window.close())
-hl.bind(mainMod .. " + X", hl.dsp.exec_cmd(terminal))
-hl.bind(mainMod .. " + C", hl.dsp.exec_cmd("firefox"))
-hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
-
 hl.bind(mainMod .. " + left",  hl.dsp.focus({ direction = "left" }))
 hl.bind(mainMod .. " + right", hl.dsp.focus({ direction = "right" }))
 hl.bind(mainMod .. " + down", hl.dsp.focus({ workspace = "+1" }))
@@ -212,6 +207,11 @@ hl.bind(mainMod .. " + H",   hl.dsp.focus({ workspace = "-1" }))
 
 hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(),   { mouse = true })
 hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
+
+hl.bind(mainMod .. " + Q", hl.dsp.window.close())
+hl.bind(mainMod .. " + X", hl.dsp.exec_cmd(terminal))
+hl.bind(mainMod .. " + C", hl.dsp.exec_cmd("firefox"))
+hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 
 hl.bind(mainMod .. "+Space", hl.dsp.exec_cmd(ipc .. "panel-toggle launcher"))
 hl.bind(mainMod .. "+comma", hl.dsp.exec_cmd(ipc .. "settings-toggle"))
