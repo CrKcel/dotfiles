@@ -312,8 +312,8 @@ animations {
     }
 
     //窗口关闭的动画，先溶解后下落
-    /-window-close {
-        duration-ms 1000 
+    window-close {
+        duration-ms 700 
         curve "linear"    
 
         custom-shader r"
