@@ -454,6 +454,12 @@ window-rule {
 }
 
 window-rule {
+    match app-id=r#"folia$"# title="Folia Remote"
+    open-focused false
+    open-floating true
+}
+
+window-rule {
     match app-id=r#"Pinentry-gtk$"#
     open-floating true
 }
@@ -500,3 +506,4 @@ cursor {
 }
 
 include "dms/binds.kdl"
+include "dms/outputs.kdl"
