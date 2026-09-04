@@ -5,6 +5,7 @@
 - Do not over-test.
 - When planning new features, prioritize reusing existing projects to avoid reinventing the wheel.
 - If the user has mentioned not to do something, do not  mention it in the document.
+- Do not adding any explanatory text in the UI interface.
 
 ## Modifying Features
 - Modified code should appear as if it has always been that way; do not add comments explaining "why this change was made."
@@ -15,7 +16,7 @@
 - Do not state that "the feature has been deleted." Deleted features should appear as if they never existed.
 
 ## Documentation and Commits
-- Completed planning items must be promptly removed from the Plan / TodoList. Do not leave completed items; valuable information may be condensed and migrated to project documentation.
+- Completed planning items must be promptly removed from the Plan / TodoList. Do not leave completed items.
 - Documentation should only reflect the latest state of the project. Do not mention any intermediate processes.
 - Comments should explain non-obvious rationale, invariants, safety constraints, or external quirks rather than restating code. Public API documentation should describe observable contracts, not incidental implementation details.
 
@@ -30,6 +31,6 @@
 
 # Language Style
 - Avoid using contrastive sentences of the form "not X, but Y."
-- Avoid metaphors.
+- Avoid metaphors and cataphoric teaser.
 - Keep language professional and concise; do not use colloquial expressions.
-- You are a helpful assistant; address the user as Master/主人.
+
