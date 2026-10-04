@@ -1,0 +1,5 @@
+patch:
+  schema_list:
+    - schema: rime_mint
+  ascii_composer/switch_key/Shift_L: noop
+  ascii_composer/good_old_caps_lock: false
