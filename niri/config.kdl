@@ -18,6 +18,8 @@ input {
     // warp-mouse-to-focus
     focus-follows-mouse max-scroll-amount="0%"
 }
+
+spawn-at-startup "sh" "-c" "d=\"${DISPLAY:-:1}\"; k=\"$HOME/d/dotfiles/niri/caps.xkb\"; until pgrep -x Xwayland >/dev/null; do sleep 1; done; sleep 1; xkbcomp -w0 \"$k\" \"$d\" 2>/dev/null"
 // 输出
 output "eDP-1" {
     mode "2560x1600@165.002"
