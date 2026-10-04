@@ -2,7 +2,11 @@
 input {
     keyboard {
         numlock
+        xkb {
+            file "~/d/dotfiles/niri/caps.xkb"
+        }
     }
+    
     touchpad {
         tap
         natural-scroll

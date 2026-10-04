@@ -1,0 +1,10 @@
+xkb_keymap {
+    xkb_keycodes "evdev" { include "evdev+aliases(qwerty)" };
+    xkb_types "complete" { include "complete" };
+    xkb_compat "complete" { include "complete" };
+    xkb_symbols "basic" {
+        include "pc+us+inet(evdev)"
+        key <CAPS> { [ F13 ] };
+    };
+    xkb_geometry "pc(pc105)" { include "pc(pc105)" };
+};

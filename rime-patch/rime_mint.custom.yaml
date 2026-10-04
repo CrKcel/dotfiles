@@ -1,2 +1,5 @@
 patch:
   menu/page_size: 10
+  key_binder/bindings/+:
+    - { when: always, accept: Shift+space, send_sequence: "" }
+#    - { when: always, accept: Caps_Lock, send_sequence: "" }
