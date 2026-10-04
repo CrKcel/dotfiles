@@ -2,4 +2,5 @@ patch:
   menu/page_size: 10
   key_binder/bindings/+:
     - { when: always, accept: Shift+space, send_sequence: "" }
-#    - { when: always, accept: Caps_Lock, send_sequence: "" }
+  # express_editor 会拒绝按键释放事件，shift_commit 依赖左 Shift 的释放，故需插到列表最前
+  "engine/processors/@before 0": lua_processor@*shift_commit
